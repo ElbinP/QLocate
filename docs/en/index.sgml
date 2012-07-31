@@ -1,0 +1,156 @@
+<!doctype linuxdoc system>
+<article>
+<title>The QLocate Handbook
+<author>Steeve Beaudin <tt>steevebeaudin@netscape.net</tt>
+<date>Version 2.1 , Mon Feb 18 08:38:17 EST 2002
+<abstract>
+This Handbook describes QLocate Version 2.1
+</abstract>
+
+<toc>
+
+<sect>Introduction<p>
+<verb>
+QLocate is X11 interface for Secure Locate (slocate).QLocate retrieve data info from locate command,
+and display the result in windows mode, the base functionality of locate is preserved, and the graphic interface
+extend the conviviality, and functionality, in permit sorting results, make multiple selection , display statistic
+on file and possibility many more ....
+</verb>
+<sect1>Changes<p>
+<verb>
+* Mon Feb 18 2002  v2.1
+- First spec file for Mandrake.
+- Update of documentation.
+- add 'AC_PROG_LIBTOOL' macro in configure.in
+
+* Sun Feb 17 2002  v2.0
+- Addition of form configform
+- Gestion of /etc/updatedb.conf, store in local.
+- Create slocate database from front end interface.
+- Choose the slocate databaseDB to query.
+- In class rpmstat strtok is replace by thread-safe strtok_r.
+- Addition of command "file" in info on file.
+- The french translator is install with the environment variable "LANG" ( LANG=fr )
+- Option -e and -f is add for choose language. ( -e english,  -f french )
+
+* Wed Jan 30 2002  v1.1
+- Addition of french translation.
+- Class rpmfind derived from QObject.
+- Class filestat derived from QObject.
+- Query slocate DB threaded.
+
+* Tue Nov 6 2001  v1.0
+- First release of QLocate
+</verb>
+
+<sect>Installation<p>
+<sect1>How to obtain QLocate<p>
+See		http://www.geocities.com/rebusnet/qlocate/index.html
+<p>
+
+<sect1>Requirements<p>
+<verb>
+- QT library 2.3.0 or superior,
+- slocate package,
+- rpm command (optional),
+- file command (optional).
+
+Qlocate is tested with slocate 2.5 and more.
+RPM part is tested with rpm 4.0.3 and more.
+file part is tested with file 3.36 and more.
+</verb>
+
+<sect1>Compilation and installation
+<p>
+In order to compile and install QLocate on your system, type the following in
+the base directory of the QLocate distribution:
+
+<tscreen><verb>
+% ./configure
+% make
+% make install
+</verb></tscreen>
+
+<p>
+Since QLocate uses <verb>autoconf</verb> you should have not trouble
+compiling it.
+Should you run into problems please report them to the the author at 
+<htmlurl url="mailto:steevebeaudin@netscape.net" name = "Steeve Beaudin">
+
+<p>
+<sect> Usage <p>
+<verb>
+NAME
+  qlocate - X11 front-end for Security Enhanced version of the GNU Locate
+
+SYNOPSIS
+  qlocate [ -e | -f ]
+
+DESCRIPTION
+
+  -e Force english language.
+  -f Force french language.
+
+   QLocate also supports some traditional X11 command line options:
+
+  -display display, sets the X display (default is $DISPLAY).
+  -geometry geometry, sets the client geometry of the main widget.
+  -fn or -font font, defines the application font.
+  -bg or -background color, sets the default background color and an application palette (light and dark shades are calculated).
+  -fg or -foreground color, sets the default foreground color.
+  -btn or -button color, sets the default button color.
+  -name name, sets the application name.
+  -title title, sets the application title (caption).
+  -visual TrueColor, forces the application to use a TrueColor visual on an 8-bit display.
+  -ncols count, limits the number of colors allocated in the color cube on a 8-bit display,
+
+ENVIRONMENT VARIABLES
+  The environment variable "LANG" is check for language, setting LANG to fr ( LANG=fr )
+  make qlocate in french on start.
+  The environment variable "HOME" is use for set some part of qlocate.
+
+NOTES
+  Option -e predominate on option -f.
+
+SEE ALSO
+  locate, slocate, updatedb, rpm, file
+
+VERSION
+  QLocate v2.1
+
+AUTHOR
+  Steeve Beaudin - Copyright (c) 2001, 2002
+
+BUG REPORT
+  Report any bugs to steevebeaudin@netscape.net
+
+WEB
+  http://www.geocities.com/rebusnet/qlocate/
+</verb>
+
+<sect>Questions and Answers<p>
+<verb>
+qlocaterc is the config file, your find in $HOME/.qlocate/qlocaterc
+</verb>
+
+<sect>Copyright<p>
+
+QLocate Copyright 2001, 2002 Steeve Beaudin , steevebeaudin@netscape.net
+
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+<p>
+</article>

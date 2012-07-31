@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Network Rebus.net</author>
+ <class>BaseForm</class>
+ <widget class="QDialog" name="BaseForm">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>842</width>
+    <height>802</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>560</width>
+    <height>370</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>QLocate</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,2,1,0">
+   <item>
+    <widget class="QGroupBox" name="ButtonGroupSearch">
+     <property name="title">
+      <string>Search File:</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="margin">
+       <number>3</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="searchLayout">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="LineEditSearch">
+          <property name="whatsThis">
+           <string>Enter the file name you search for, if your file name conteint '$' lock with '\$'.</string>
+          </property>
+          <property name="maxLength">
+           <number>255</number>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="PushButtonSearch">
+          <property name="whatsThis">
+           <string comment="Comment whatsThis Button Search">Run the query.</string>
+          </property>
+          <property name="text">
+           <string>Search</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="optionsLayout">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="CheckBoxQueryFileNames">
+          <property name="toolTip">
+           <string>If checked all filenames matching the query are returned.
+If not checked all filepaths matching the query are returned.</string>
+          </property>
+          <property name="text">
+           <string>Search only file names</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="CheckBoxRegex">
+          <property name="toolTip">
+           <string>Active search with regular expression.</string>
+          </property>
+          <property name="whatsThis">
+           <string>Active search with regular expression.</string>
+          </property>
+          <property name="text">
+           <string>Regex</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="CheckBoxCaseSensitive">
+          <property name="toolTip">
+           <string>Make search case sensitive.</string>
+          </property>
+          <property name="whatsThis">
+           <string>Make search case sensitive.</string>
+          </property>
+          <property name="text">
+           <string>Case Sensitive</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="CheckBoxQuietMode">
+          <property name="toolTip">
+           <string>Error messages are suppressed. </string>
+          </property>
+          <property name="whatsThis">
+           <string>Error messages are suppressed. </string>
+          </property>
+          <property name="text">
+           <string>Quiet Mode</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="SpinBoxResultsShow">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="toolTip">
+           <string> Limit the amount of results shown.</string>
+          </property>
+          <property name="whatsThis">
+           <string> Limit the amount of results shown.</string>
+          </property>
+          <property name="maximum">
+           <number>65535</number>
+          </property>
+          <property name="value">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="TextLabelResultsShow">
+          <property name="text">
+           <string>Results Show</string>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Results</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="margin">
+       <number>3</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <spacer name="SpacerResultSort">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>248</width>
+            <height>18</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="ButtonGroupSort">
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="margin">
+            <number>3</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="TextLabelSort">
+             <property name="text">
+              <string>Sort Results :</string>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="RadioButtonDescending">
+             <property name="toolTip">
+              <string>Sort results descending.</string>
+             </property>
+             <property name="whatsThis">
+              <string>Sort results descending.</string>
+             </property>
+             <property name="text">
+              <string>Descending</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="RadioButtonAscending">
+             <property name="toolTip">
+              <string>Sort results ascending.</string>
+             </property>
+             <property name="whatsThis">
+              <string>Sort results ascending.</string>
+             </property>
+             <property name="text">
+              <string>Ascending</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QListWidget" name="ListBoxResults">
+        <property name="contextMenuPolicy">
+         <enum>Qt::CustomContextMenu</enum>
+        </property>
+        <property name="whatsThis">
+         <string>Display results find by locate.</string>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::ExtendedSelection</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>File Info</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="margin">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QTextEdit" name="FileInfoDisplay">
+        <property name="whatsThis">
+         <string>Display info on selected file.</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="LineEditStatusBar1">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Display status of action.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Display status of action.</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="LineEditStatusBar2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Display number of files find.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Display number of files find.</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections/>
+</ui>
