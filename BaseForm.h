@@ -61,6 +61,7 @@ public slots:
     virtual void selectAll_slot();
     virtual void deselectAll_slot();
     virtual void setup_slot();
+    virtual void openFile_slot();
 
 protected:
     virtual void resizeEvent(QResizeEvent * event);

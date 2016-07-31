@@ -42,6 +42,9 @@ themenu::themenu(QWidget *parent, const char *name ) : QWidget(parent)
     action->setWhatsThis( tr("Select all file from results") );
     action = editMenu->addAction( tr("&Deselect All"), parent, SLOT(deselectAll_slot()), Qt::CTRL+Qt::Key_D );
     action->setWhatsThis( tr("Deselect all files from the result") );
+    action = editMenu->addAction( tr("&Open File"), parent, SLOT(openFile_slot()), Qt::CTRL+Qt::Key_O );
+    action->setWhatsThis( tr("Open File") );
+
 
     optionMenu =  mainMenu->addMenu( tr("&Option") );
     tmpIcon = QPixmap(setup_xpm);

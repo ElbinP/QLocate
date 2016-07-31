@@ -16,6 +16,9 @@
  ***************************************************************************/
 
 #include "BaseForm.h"
+#include <Qt/qdesktopservices.h>
+#include <Qt/qdebug.h>
+#include <Qt/qurl.h>
 #include "qlicon.h"
 #include "filestat.h"
 #include "rpmstat.h"
@@ -172,6 +175,17 @@ void BaseForm::selectAll_slot()
 void BaseForm::deselectAll_slot()
 {
     ui->ListBoxResults->clearSelection();
+}
+
+void BaseForm::openFile_slot()
+{
+    qDebug() << "Open file slot called";
+    foreach (QListWidgetItem* ii, ui->ListBoxResults->selectedItems()){
+        //QDesktopServices::openUrl(QUrl::fromLocalFile(ii->data(Qt::ToolTipRole).toString()));
+        qDebug() << "Opening " << ii->text();
+        QDesktopServices::openUrl(QUrl::fromLocalFile(ii->text()));        
+    }
+    
 }
 
 void BaseForm::setup_slot()
